@@ -142,7 +142,7 @@ Phỏng vấn bán cấu trúc 3 người ngoài nhóm, theo vai trò, không gh
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
 | Log/review catalog hiện có | 3 lỗi | Có lỗi file thiếu, reference sai và 404 | Chưa có tần suất chuẩn hóa |
-| Phỏng vấn giả lập | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng |
+| Phỏng vấn  | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng |
 
 #### Nhóm đã sửa problem thế nào sau kiểm chứng
 
