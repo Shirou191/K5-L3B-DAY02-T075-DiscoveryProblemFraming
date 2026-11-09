@@ -8,7 +8,7 @@
 - Tên nhóm: T075
 - Thành viên: xem `TEAM.md`
 - Candidate problem được chọn (1 câu): Khi một theme bàn phím bị báo lỗi thiếu file, dev muốn biết ngay file nào, theme nào để không phải rà tay cả catalog 160 theme (Đạt #2).
-- Quyết định cuối: Go / Not Yet / No-Go
+- Quyết định cuối: **Go, phạm vi nhỏ** (đề xuất; xem mục 8, cần nhóm xác nhận)
 
 ---
 
@@ -83,6 +83,7 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
+<<<<<<< Updated upstream
 | 1 | Người khác làm sản phẩm có nhiều asset (theme, sticker, skin game…) cũng gặp lỗi thiếu file / sai đường dẫn, không chỉ một mình Đạt | Value | 5 | 1 | Có |
 | 2 | Lỗi thiếu file xảy ra đủ thường xuyên (vài lần/tháng) để đáng giải | Value | 5 | 2 | Có |
 | 3 | Mỗi lần gặp lỗi, phần lớn thời gian mất ở bước tìm file nào lỗi, không phải ở bước sửa | Value | 4 | 4 | Không (đã có từ quy trình của Đạt) |
@@ -93,11 +94,24 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 *Điểm "quan trọng" và "đã có bằng chứng" là đề xuất ban đầu, nhóm điều chỉnh sau khi thảo luận.*
 
 Giả định nhóm kiểm chứng trong buổi này: #1 và #2 (quan trọng cao, bằng chứng thấp). Bộ câu hỏi ở mục 3.2.
+=======
+| 1 | Khi theme báo lỗi thiếu file, việc xác định đúng file và theme lỗi mất khoảng 30–60 phút mỗi lần | Value | 5 | 3 | ✅ |
+| 2 | Bước tốn nhất là rà tay từng đường dẫn (bước 4–5), không phải bước nhận báo lỗi hay xác định theme | Value | 5 | 2 | ✅ |
+| 3 | Phần lớn lỗi thiếu file đến từ sai đường dẫn hoặc sai tên file, chứ không phải file chưa từng được tạo | Feasibility | 5 | 2 | ✅ |
+| 4 | Catalog JSON có cấu trúc đủ ổn định để một script đọc và đối chiếu với file trên đĩa | Feasibility | 4 | 3 | — |
+| 5 | Các dev khác trong team cũng gặp lỗi này, không chỉ Đạt | Value | 4 | 1 | ✅ |
+| 6 | Dev sẽ chạy và tin kết quả của bước kiểm tra tự động trước khi build | Usability | 3 | 1 | Sau khi có bản thử |
+
+Điểm “Đã có bằng chứng” là nhóm tự chấm dựa trên hồ sơ cá nhân hiện có: các lỗi id 48, id 87 và id 97 là ví dụ cụ thể (nên giả định 1 được 3), nhưng thời gian 30–60 phút mới là ước lượng của Đạt, chưa bấm giờ.
+
+Giả định nhóm kiểm chứng trong buổi này: giả định 1, 2, 3 và 5 (quan trọng cao, bằng chứng thấp). Giả định 4 có thể kiểm bằng cách mở file catalog; giả định 6 để sau khi có bản thử.
+>>>>>>> Stashed changes
 
 ### 3.2. Kiểm chứng
 
-Cách đã dùng: Phỏng vấn / Survey / Log, ticket, review
+Cách đã dùng: Log, ticket, review (đọc lại các lỗi đã ghi nhận trong hồ sơ cá nhân của Đạt). **Chưa thực hiện phỏng vấn hoặc survey.** Phần này cần nhóm làm thật, không điền thay.
 
+<<<<<<< Updated upstream
 **Bộ câu hỏi phỏng vấn (The Mom Test, 10–15'/người)** — hỏi bạn học nhóm khác hoặc dev/designer làm sản phẩm có nhiều asset; không hỏi thành viên nhóm mình; ghi theo vai trò, không ghi tên thật.
 
 1. Bạn đang làm sản phẩm gì, có khoảng bao nhiêu file asset (ảnh, âm thanh, font, config)?
@@ -116,33 +130,52 @@ Không hỏi: "Bạn có muốn tool tự kiểm tra không?", "Ý tưởng này
 *Bộ câu hỏi soạn có hỗ trợ của AI (Claude); kết quả bên dưới phải từ người thật.*
 
 Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`):
+=======
+Kế hoạch phỏng vấn 2–3 dev có làm data theme hoặc build catalog (theo The Mom Test: hỏi chuyện đã xảy ra, không hỏi ý kiến về giải pháp). Câu hỏi gợi ý:
+
+1. Lần gần nhất bạn gặp lỗi thiếu file ở một theme là khi nào? Chuyện gì đã xảy ra?
+2. Lúc đó bạn làm gì để tìm ra file thiếu? Mất bao lâu?
+3. Tuần qua hoặc tháng qua có mấy lần như vậy?
+4. Có lần nào lỗi lọt ra ngoài chưa? Sau đó xử lý thế nào?
+
+Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`). **Chưa có buổi nào được ghi nhận**, các ô dưới đây cần điền sau khi phỏng vấn:
+>>>>>>> Stashed changes
 
 | Trường | Nội dung |
 |---|---|
-| Người được hỏi (vai trò, không ghi tên thật) | |
-| Câu nói đáng nhớ nhất (nguyên văn) | |
-| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | |
-| Hiện đang xử lý bằng cách nào (workaround)? | |
-| Mất bao lâu, bao lần? | |
-| Insight / opportunity rút ra | |
+| Người được hỏi (vai trò, không ghi tên thật) | *(chưa phỏng vấn)* |
+| Câu nói đáng nhớ nhất (nguyên văn) | *(chưa phỏng vấn)* |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | *(chưa phỏng vấn)* |
+| Hiện đang xử lý bằng cách nào (workaround)? | *(chưa phỏng vấn)* |
+| Mất bao lâu, bao lần? | *(chưa phỏng vấn)* |
+| Insight / opportunity rút ra | *(chưa phỏng vấn)* |
 
 Tổng hợp:
 
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
-| | | | |
+| Hồ sơ cá nhân của Đạt (lỗi đã ghi nhận trong catalog) | 3 lỗi cụ thể (id 48, 87, 97) | Lỗi thiếu file có thật và lọt vào dữ liệu: id 48 trỏ tới file không tồn tại, id 87 thiếu popup, id 97 var4 trả 404 | Thời gian 30–60 phút là ước lượng, chưa bấm giờ; Đạt cũng ghi chưa chắc nguyên nhân là sai tên, chưa tạo file hay catalog ghi sai đường dẫn |
+| Phỏng vấn / survey dev khác | 0 | *(chưa có)* | *(chưa có)* |
 
-**Nhóm đã sửa problem thế nào sau kiểm chứng:**
+**Nhóm đã sửa problem thế nào sau kiểm chứng:** Chưa sửa, vì chưa có phỏng vấn hoặc survey. Sau khi có dữ liệu, nhóm cập nhật dòng này, đặc biệt là giả định 2 (bước nào tốn nhất) và giả định 3 (nguyên nhân gốc của lỗi thiếu file).
 
 ### 3.3. Research giải pháp đã có
 
 | Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
+<<<<<<< Updated upstream
 | Android Lint (công cụ kiểm tra tĩnh có sẵn trong Android Studio/Gradle) | [developer.android.com/studio/write/lint](https://developer.android.com/studio/write/lint), [check UnusedResources](https://googlesamples.github.io/android-custom-lint-rules/checks/UnusedResources.md.html) | Phát hiện sớm (trước bước 1): chạy lúc build | Có sẵn, chạy tự động trong Gradle, cấu hình được bằng `lint.xml` | Kiểm tra resource trong `res/` mà code tham chiếu; **không đọc catalog JSON** nên không biết đường dẫn asset ghi trong catalog có tồn tại không | Pattern "kiểm tra lúc build, báo lỗi trước khi giao" là đúng; cần một bước kiểm tra riêng cho catalog |
 | JSON Schema + validator (ví dụ Ajv) | [json-schema.org](https://json-schema.org/), [ajv.js.org](https://ajv.js.org/) | Bước 3–4: kiểm entry catalog đúng format (đủ trường, đúng kiểu, đúng mẫu tên file) | Chuẩn mở, báo lỗi chỉ đúng trường nào của entry nào | Chỉ kiểm **format**, không kiểm file có tồn tại thật trên đĩa; vẫn cần thêm bước đối chiếu file | Tách 2 loại lỗi: sai format (schema bắt được) và thiếu file (cần đối chiếu đĩa) |
 | Firebase Crashlytics — ghi lỗi non-fatal | [Customize crash reports for Android](https://firebase.google.com/docs/crashlytics/android/customize-crash-reports) | Bước 1–2: biết theme nào lỗi trên máy người dùng | Ghi được lỗi không làm crash app (`recordException`) kèm custom key, ví dụ theme id, tên file | Chỉ biết **sau khi** lỗi đã lọt ra người dùng; báo cáo gửi theo lô ở lần mở app sau | Dùng làm lưới an toàn cuối, không thay được kiểm tra trước khi giao |
 
 *Research có hỗ trợ của AI (Claude). Nhóm cần tự mở và kiểm từng link trước khi nộp.*
+=======
+| lychee (công cụ kiểm tra link hỏng) | https://github.com/lycheeverse/lychee | Bước 4: đối chiếu đường dẫn với file thật, nhưng chỉ cho link trong tài liệu | README nói công cụ tìm hyperlink hỏng trong website và các file Markdown, HTML, text; có thể kiểm tra file cục bộ | Mục đích là link trong tài liệu, chưa rõ có đọc được đường dẫn asset trong catalog JSON không (cần thử) | Pattern "quét và báo ngay link hỏng" đã có sẵn; nhóm chỉ cần một bước tương tự cho catalog |
+| linkinator (công cụ kiểm tra link hỏng) | https://github.com/JustinBeckwith/linkinator | Bước 4: kiểm tra file cục bộ và link trong Markdown | README nói công cụ kiểm tra website, tài liệu và file cục bộ, có file cấu hình | Cũng tập trung vào link trong HTML/Markdown, không tự hiểu cấu trúc catalog theme | Cho thấy cách báo cáo gọn "file nào, link nào hỏng"; chưa thay thế được bước đối chiếu theo schema của nhóm |
+| Ajv (kiểm tra JSON theo schema) | https://github.com/ajv-validator/ajv | Một phần bước 3 và bước 6: kiểm tra entry catalog đúng định dạng | README nói công cụ validate JSON theo JSON Schema | Kiểm tra cấu trúc dữ liệu (kiểu, định dạng), không kiểm tra file có tồn tại trên đĩa | Bắt được lỗi định dạng như màu toolbar sai độ dài hex; vẫn cần thêm bước đối chiếu file thật |
+
+Ba mục trên được nhóm mở link README và đọc phần mô tả; không công cụ nào tự giải trọn bài toán "entry catalog trỏ tới file không tồn tại". Điều đó ủng hộ hướng Rule: một bước kiểm tra tự viết, hoặc ghép validate schema với đối chiếu file, trước khi cân nhắc AI.
+>>>>>>> Stashed changes
 
 ---
 
@@ -220,16 +253,17 @@ flowchart TD
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | |
+| **Actor** | Dev làm data theme bàn phím (người xử lý lỗi thiếu file khi build hoặc khi kiểm tra catalog) |
+| **Quy trình** | Nhận báo lỗi → xác định theme lỗi → mở catalog JSON → đối chiếu từng đường dẫn với file trên đĩa → (nếu không thấy) rà các theme cùng đợt hoặc cả catalog 160 theme → sửa → build lại (7 bước, ~1–2 tiếng/lần) |
+| **Bottleneck** | Bước 4–5: đối chiếu tay từng đường dẫn trong catalog (160 theme, 2.192 file) với file trên đĩa, ~45–90 phút mỗi lần |
+| **Impact** | Theme thiếu file có thể lọt ra tay người dùng (đã ghi nhận id 48, 87, 97); mỗi lần sửa phải build và đóng gói lại; thời gian rà tay tăng theo số theme trong catalog |
+| **Success Metric** (baseline → target, cách đo) | Thời gian tìm ra file lỗi: ~45–90' → dưới 1' mỗi lần; số theme lỗi lọt qua kiểm tra: 1–2 mỗi đợt → 0. Cách đo: bấm giờ trên các lỗi thật và đếm lỗi còn lại sau mỗi đợt build |
+| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | Công cụ chỉ báo lỗi, không tự đổi tên, tự xóa entry hay tự tạo file. Dev đọc báo cáo và quyết định sửa. Khi công cụ báo nghi ngờ hoặc script lỗi, dev rà tay theme đó theo quy trình cũ |
 
 Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
 
--
+- **Chưa có phản biện nào được ghi nhận** từ AI hoặc nhóm khác. Phần này cần nhóm nhờ AI hoặc nhóm khác phản biện Problem Statement v0 (chỉ hỏi lỗ hổng, không để viết lại) rồi điền: điểm yếu, nhóm có đồng ý không, đã sửa gì.
+- Câu hỏi gợi ý để hỏi: Baseline 45–90' dựa trên cách đo nào? Lỗi thiếu file có thể do nhiều nguyên nhân (sai tên, chưa tạo file, catalog sai)? Nếu công cụ báo sót thì dev có biết không?
 
 ---
 
@@ -237,38 +271,44 @@ Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng
 
 ### 6.1. Ma trận độ mơ hồ × độ phức tạp
 
-Bài của nhóm nằm ở ô:
+Bài của nhóm nằm ở ô: **độ mơ hồ thấp × độ phức tạp thấp** (Rule hoặc Workflow đơn giản thường đủ).
 
 Vì sao:
+
+- **Độ mơ hồ thấp:** kết quả có đúng/sai rõ. Một đường dẫn trong catalog hoặc trỏ tới file có thật trên đĩa, hoặc không; không có nhiều đầu ra khác nhau cùng được chấp nhận như khi viết một đoạn văn. Các lỗi đã ghi nhận (id 48 trỏ file không tồn tại, id 87 thiếu popup, id 97 var4 trả 404) đều là lỗi xác định được.
+- **Độ phức tạp thấp:** phần cần xử lý là bước đối chiếu (bước 4–5), chỉ dùng hai nguồn dữ liệu là catalog JSON và file trên đĩa, và cùng một phép kiểm tra lặp lại cho từng đường dẫn, không rẽ nhánh. Quy trình tổng thể có 7 bước nối tiếp, nhưng các bước còn lại (nhận báo lỗi, sửa, build lại) là việc của người, không phải phần cần can thiệp.
+- Lưu ý còn phải kiểm chứng: nếu phỏng vấn ở CP4 cho thấy nguyên nhân thiếu file có nhiều dạng khác nhau mà luật đối chiếu không bắt hết (giả định 3), độ mơ hồ có thể cao hơn nhóm đang chấm.
 
 ### 6.2. So sánh 4 mức
 
 | Mức | Phương án cho bài của nhóm | Đủ khi nào | Rủi ro | Chọn? |
 |---|---|---|---|---|
-| **No AI** (sửa quy trình) | | | | |
-| **Rule** | | | | |
-| **Workflow** | | | | |
-| **Agent** | | | | |
+| **No AI** (sửa quy trình) | Checklist cố định theo loại theme và quy ước đặt tên, dev rà tay trước khi build | Số theme ít, lỗi hiếm; checklist đủ để dev không sót | Vẫn rà tay: tốn khoảng 30' mỗi theme và vẫn sót (id 48, 87, 97 đã lọt); với 160 theme và 2.192 file thì không mở rộng được | Không (chỉ giữ checklist làm bước phụ) |
+| **Rule** | Script đọc catalog JSON, đối chiếu từng đường dẫn với file trên đĩa, in báo cáo theme id + trường + đường dẫn thiếu; không tự sửa | Lỗi là loại xác định được: file có hoặc không, đường dẫn đúng hoặc sai | Script có bug báo sót hoặc báo nhầm (ví dụ khác hoa/thường); dev tin script mà bỏ kiểm tra tay | **Có** |
+| **Workflow** | Rule ở trên cộng thêm một bước dùng AI, ví dụ đoán nguyên nhân (sai tên, chưa tạo file, catalog ghi sai) hoặc gợi ý file gần đúng | Khi nguyên nhân có nhiều dạng mà luật không phân loại được | Thêm chi phí và rủi ro đoán sai; gợi ý sai có thể làm dev sửa nhầm | Không (hiện chưa có bằng chứng cần) |
+| **Agent** | AI tự quét catalog, tự quyết cần kiểm gì, tự sửa đường dẫn hoặc tạo file thay thế | Khi không biết trước cần kiểm gì và cần nhiều bước phụ thuộc nhau | Tự sửa catalog hoặc asset có thể làm hỏng dữ liệu thật; khó kiểm và khó quay về | Không |
 
-**Mức chọn:**
+**Mức chọn:** **Rule**.
 
-**Vì sao không chọn mức đơn giản hơn:**
+**Vì sao không chọn mức đơn giản hơn:** Mức đơn giản hơn là No AI (checklist và rà tay). Mức này đã là cách làm hiện tại và vẫn để lọt lỗi: dev rà tay khoảng 30' mỗi theme mà id 48, 87 và 97 vẫn lọt vào dữ liệu thật. Rà tay cả catalog 160 theme (2.192 file) tốn thêm 30–60' mỗi lần. Vì việc cần kiểm là xác định (file có hay không), một bước kiểm tra tự động bằng luật giải đúng bottleneck mà không cần AI. Chưa chọn Workflow hay Agent vì chưa có bằng chứng nguyên nhân thiếu file có nhiều dạng mà luật không bắt hết (giả định 3 ở CP4 còn chưa kiểm chứng).
 
 ### 6.3. AI Canvas rút gọn
 
+Bài của nhóm dùng mức Rule, không có AI. Canvas dưới đây ghi phần "máy" là luật xác định, để nhóm nhìn rõ chỗ nào máy làm, chỗ nào người quyết.
+
 | Thành phần | Nội dung |
 |---|---|
-| **Prediction** — AI dự đoán / tạo ra gì? | |
-| **Judgment** — con người cân nhắc, quyết định gì? | |
-| **Action** — hành động cuối cùng là gì, ai làm? | |
-| **Outcome** — đo kết quả bằng gì? | |
-| **Input** — AI cần dữ liệu đầu vào gì mỗi lần chạy? Có sẵn không? | |
-| **Feedback** — lấy phản hồi ở đâu để cải thiện? | |
+| **Prediction** — AI dự đoán / tạo ra gì? | Không có AI dự đoán. Luật xác định tạo ra danh sách: theme id, trường catalog và đường dẫn nào không có file thật trên đĩa. Đây là kết quả đúng/sai, không phải ước đoán |
+| **Judgment** — con người cân nhắc, quyết định gì? | Dev quyết định lỗi là sai đường dẫn, sai tên hay chưa tạo file, và sửa bằng cách nào; đồng thời quyết định tin hay rà tay lại khi báo cáo nghi ngờ (ví dụ khác hoa/thường) |
+| **Action** — hành động cuối cùng là gì, ai làm? | Dev sửa đường dẫn hoặc bổ sung file, rồi build/đóng gói lại. Công cụ chỉ báo lỗi, không tự sửa |
+| **Outcome** — đo kết quả bằng gì? | Thời gian tìm ra file lỗi (từ khoảng 45–90' xuống dưới 1'); số theme lỗi lọt qua kiểm tra mỗi đợt (từ 1–2 xuống 0); kiểm công cụ bằng các lỗi thật id 48, 87, 97 |
+| **Input** — AI cần dữ liệu đầu vào gì mỗi lần chạy? Có sẵn không? | Catalog JSON và thư mục asset trên đĩa (160 theme, 2.192 file). Cả hai đều có sẵn, không cần dữ liệu ngoài |
+| **Feedback** — lấy phản hồi ở đâu để cải thiện? | Dev ghi lại lần báo nhầm hoặc bỏ sót; kết quả build/đóng gói sau khi sửa; số lỗi lọt ra tay người dùng sau mỗi đợt giao |
 
 ### 6.4. Hai câu hỏi của Google PAIR
 
-- Người dùng muốn **được hỗ trợ (augment)** hay **giao hẳn việc (automate)**? Bằng chứng:
-- AI sai kiểu nào tệ hơn, **báo nhầm** hay **bỏ sót**? Vì sao, và thiết kế đã xử lý thế nào:
+- Người dùng muốn **được hỗ trợ (augment)** hay **giao hẳn việc (automate)**? **Được hỗ trợ.** Dev muốn biết ngay file nào thiếu, nhưng việc sửa (đổi đường dẫn, bổ sung file, đổi tên) vẫn do dev quyết, vì sửa sai catalog hoặc asset có thể làm hỏng dữ liệu thật. Bằng chứng: lỗi đã lọt vào dữ liệu (id 48, 87, 97) và boundary ở mục 4.2 cho phép công cụ chỉ báo, không tự sửa. Bằng chứng này hiện chỉ đến từ Đạt; cần xác nhận với dev khác ở CP4.
+- AI sai kiểu nào tệ hơn, **báo nhầm** hay **bỏ sót**? **Bỏ sót tệ hơn.** Báo nhầm chỉ làm dev mất vài phút kiểm lại một đường dẫn; bỏ sót làm theme thiếu file lọt ra tay người dùng, phải sửa và đóng gói lại. Thiết kế xử lý: luật đối chiếu tất cả đường dẫn trong catalog (không lấy mẫu), báo mọi nghi ngờ (kể cả khác hoa/thường), kiểm công cụ bằng các lỗi thật id 48, 87, 97, và giữ phương án quay về rà tay. (Ở mức Rule, khái niệm này áp dụng cho luật chứ không phải mô hình AI.)
 
 ---
 
@@ -276,29 +316,35 @@ Vì sao:
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** | |
-| **AI intervention point** | |
-| **Mức chọn** | No AI / Rule / Workflow / Agent |
-| **Rủi ro & người kiểm tra** | |
+| **Actor** | Dev làm data theme bàn phím (người xử lý lỗi thiếu file khi build hoặc khi kiểm tra catalog) |
+| **Quy trình** | Chạy bước kiểm tra trước build/đóng gói → luật đọc catalog và đối chiếu từng đường dẫn với file trên đĩa → xuất báo cáo (theme id, trường, đường dẫn thiếu) → dev sửa → chạy lại; còn lại như quy trình ở mục 4.2 |
+| **Bottleneck** | Đối chiếu tay từng đường dẫn trong catalog với file trên đĩa (~45–90' mỗi lần) |
+| **Impact** | Theme thiếu file lọt ra tay người dùng, phải sửa và đóng gói lại; thời gian rà tay tăng theo số theme |
+| **Success Metric** (baseline → target, cách đo) | Thời gian tìm ra file lỗi: ~45–90' → dưới 1'. Theme lỗi lọt qua kiểm tra: 1–2 mỗi đợt → 0. Số lỗi thật bị bỏ sót (kiểm bằng id 48, 87, 97 và các lỗi mới): 0. Cách đo: bấm giờ trên lỗi thật, đếm lỗi còn lại sau mỗi đợt build |
+| **Boundary** | Công cụ chỉ **báo** lỗi, không tự đổi tên, xóa entry hay tạo file thay thế. Dev duyệt mọi sửa đổi. Khi công cụ báo nghi ngờ hoặc script lỗi, dev rà tay theme đó theo quy trình cũ |
+| **AI intervention point** | Không có. Bài toán dùng luật xác định (đối chiếu đường dẫn); AI chưa được đưa vào |
+| **Mức chọn** | **Rule** |
+| **Rủi ro & người kiểm tra** | Luật báo sót hoặc báo nhầm; dev tin kết quả mà bỏ kiểm tra tay. Người kiểm tra: dev làm data theme (người chạy công cụ) và người duyệt trước khi giao |
 
 **Thay đổi so với v0 và lý do:**
 
 | Trường | v0 | v1 | Vì sao đổi |
 |---|---|---|---|
-| | | | |
+| Success Metric | Hai chỉ số: thời gian tìm file lỗi và số theme lỗi lọt qua | Thêm chỉ số số lỗi thật bị bỏ sót = 0, kiểm bằng id 48, 87, 97 | Mức Rule dễ báo sót hơn là báo nhầm; câu PAIR ở mục 6.4 cho thấy bỏ sót tệ hơn nên cần đo trực tiếp |
+| Boundary | Công cụ chỉ báo lỗi; rà tay khi nghi ngờ | Giữ nguyên, thêm Dev duyệt mọi sửa đổi và người duyệt trước khi giao | Làm rõ ai là người kiểm tra (HITL) sau khi chọn mức |
+| AI intervention point | Chưa có trường này | Không có (chọn Rule) | Ghi rõ vì sao không dùng AI |
+| Mức chọn | Chưa có | Rule | Kết quả so sánh 4 mức ở mục 6.2 |
+| Rủi ro & người kiểm tra | Chưa có | Báo sót/nhầm, dev quá tin công cụ; dev và người duyệt kiểm | Rủi ro mới phát sinh sau khi chọn Rule |
 
-**Tiêu chí đánh giá đầu ra của AI (3–5 tiêu chí):**
+**Tiêu chí đánh giá đầu ra của công cụ kiểm tra (3–5 tiêu chí).** Vì chọn mức Rule, "đầu ra" là báo cáo lỗi của luật, không phải đầu ra của mô hình AI:
 
 | # | Tiêu chí | Đạt khi | Không đạt khi |
 |---:|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Bắt đủ lỗi đã biết | Báo đúng cả id 48, 87 và 97 khi chạy trên catalog 160 theme | Bỏ sót ít nhất 1 trong 3 lỗi đã biết |
+| 2 | Báo cáo đủ thông tin để sửa | Mỗi lỗi có theme id, trường catalog và đường dẫn thiếu | Chỉ báo "có lỗi" hoặc thiếu một trong ba thông tin |
+| 3 | Không báo nhầm quá nhiều | Dev kiểm lại thấy phần lớn cảnh báo là lỗi thật (ngưỡng nhóm chốt sau khi thử) | Nhiều cảnh báo là nhầm đến mức dev không còn tin công cụ |
+| 4 | Không tự thay đổi dữ liệu | Công cụ không sửa hay xóa catalog và asset | Công cụ tự đổi tên, xóa entry hoặc tạo file |
+| 5 | Chạy nhanh | Chạy hết 160 theme trong vài giây đến dưới 1 phút | Chạy lâu hơn việc rà tay |
 
 ---
 
@@ -308,24 +354,28 @@ Vì sao:
 
 | Rủi ro | Câu hỏi | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng |
 |---|---|---|---|
-| **Value** | Người dùng có thật sự cần và sẽ dùng không? | | |
-| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | | |
-| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | | |
-| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | | |
+| **Value** | Người dùng có thật sự cần và sẽ dùng không? | Trung bình | Lỗi thiếu file có thật (id 48, 87, 97) và rà tay tốn thời gian, nhưng bằng chứng đến từ Đạt; chưa phỏng vấn dev khác, thời gian 30–60' chưa bấm giờ |
+| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | Thấp | Báo cáo chỉ gồm theme id, trường và đường dẫn thiếu; dev đã quen đọc catalog. Rủi ro còn lại là dev quá tin công cụ, đã có phương án quay về rà tay |
+| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | Thấp | Cần catalog JSON và thư mục asset, cả hai có sẵn; luật đối chiếu đường dẫn là bài toán đơn giản. Cần kiểm giả định catalog ổn định (giả định 4) |
+| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | Thấp | Script nội bộ, không dùng dịch vụ trả phí và không đưa dữ liệu ra ngoài. Cần chốt ai bảo trì script (đề xuất: dev làm data theme) |
 
 ### 8.2. Kết luận
 
-**Quyết định:** Go / Not Yet / No-Go
+**Quyết định:** **Go, phạm vi nhỏ** (đề xuất, cần nhóm xác nhận)
 
-**Lý do:**
+**Lý do:** Bài toán có đáp án đúng/sai rõ, thuộc ô độ mơ hồ thấp × độ phức tạp thấp, và mức Rule đủ để giải bottleneck (đối chiếu tay đường dẫn) với chi phí thấp. Ba trong bốn rủi ro ở mức Thấp. Rủi ro Value ở mức Trung bình vì bằng chứng hiện chỉ từ một người, nhưng pilot nhỏ rẻ nên có thể tự kiểm chứng dần mà không mất nhiều.
 
-**Nếu Go — pilot nhỏ nhất:**
+**Nếu Go — pilot nhỏ nhất:** Viết một script đọc catalog JSON, đối chiếu từng đường dẫn với file trên đĩa, in báo cáo theme id + trường + đường dẫn thiếu. Chạy thử trên catalog 160 theme hiện tại, xem có bắt đúng id 48, 87 và 97 không. Đồng thời bấm giờ 2–3 lần rà tay thật để có baseline đo được.
 
-**Nếu Not Yet — cần kiểm chứng gì trước:**
+**Nếu Not Yet — cần kiểm chứng gì trước:** Chỉ áp dụng nếu nhóm không xác nhận Go. Khi đó cần: (1) phỏng vấn ít nhất 2 dev khác về tần suất và cách xử lý lỗi thiếu file (giả định 5); (2) bấm giờ thật baseline 45–90' (giả định 1, 2); (3) kiểm nguyên nhân gốc của lỗi thiếu file (giả định 3).
 
-**Nếu No-Go — nên làm gì thay AI:**
+**Nếu No-Go — nên làm gì thay AI:** Dùng checklist cố định theo loại theme và quy ước đặt tên, rà tay trước khi build.
 
 **Ngưỡng dừng** (nếu sau … mà … thì quay về …):
+
+- Nếu script chạy trên catalog 160 theme mà bỏ sót ít nhất 1 trong 3 lỗi đã biết (id 48, 87, 97), thì dừng, sửa luật; nếu vẫn bỏ sót sau lần sửa thứ hai thì quay về checklist và rà tay.
+- Nếu sau 2 đợt build mà dev báo cảnh báo nhầm nhiều đến mức không còn dùng script, thì quay về checklist và rà tay.
+- Nếu phỏng vấn cho thấy các dev khác không gặp lỗi này (giả định 5 sai), thì chuyển sang Not Yet và chọn lại candidate.
 
 ---
 
