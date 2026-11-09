@@ -73,7 +73,7 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 **Vì sao loại các candidate còn lại:** Công #2 có pain đáng kể nhưng bottleneck “làm sạch” còn là giả thuyết và tiêu chí “đủ sạch” chưa chốt. Quân #1 có quy trình phù hợp nhưng số liệu hiện mới là ước tính, chưa có log hoặc kiểm chứng. Các card còn lại được giữ làm candidate dự phòng; Công #1 và Đạt #1 có thể gộp vào nhóm chuẩn hóa đầu vào, còn Đạt #3 gần cùng workflow với Đạt #2.
 
-**Xử lý bất đồng (nếu có):** Chưa có biên bản bất đồng hoặc câu hỏi phản biện được ghi nhận trong các file cá nhân. Vì vậy, lựa chọn trên là quyết định tạm thời theo bảng điểm, cần xác nhận lại với cả ba thành viên trước CP4; không coi các câu hỏi ở cột Pitch là câu hỏi đã thực sự được hỏi.
+**Xử lý bất đồng (nếu có):** Bảng pitch 2.1 đã ghi các câu hỏi phản biện (Đạt hỏi các card của Công và Quân; nhóm khác hỏi card của Đạt #2); các card Đạt #1 và #3 chưa có câu hỏi được ghi. Chưa có bất đồng nào về việc chọn Đạt #2 được ghi nhận, nên lựa chọn dựa trên bảng điểm; cả ba thành viên cần xác nhận lại.
 
 ---
 
@@ -83,8 +83,8 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
-| 1 | Người khác làm sản phẩm có nhiều asset (theme, sticker, skin game…) cũng gặp lỗi thiếu file / sai đường dẫn, không chỉ một mình Đạt | Value | 5 | 1 | Có |
-| 2 | Lỗi thiếu file xảy ra đủ thường xuyên (vài lần/tháng) để đáng giải | Value | 5 | 2 | Có |
+| 1 | Người khác làm sản phẩm có nhiều asset (theme, sticker, skin game…) cũng gặp lỗi thiếu file / sai đường dẫn, không chỉ một mình Đạt | Value | 5 | 3 | Đã kiểm ở 3.2 (3 phỏng vấn) |
+| 2 | Lỗi thiếu file xảy ra đủ thường xuyên (vài lần/tháng) để đáng giải | Value | 5 | 3 | Đã kiểm ở 3.2 (3 phỏng vấn) |
 | 3 | Mỗi lần gặp lỗi, phần lớn thời gian mất ở bước tìm file nào lỗi, không phải ở bước sửa | Value | 4 | 4 | Không (đã có từ quy trình của Đạt) |
 | 4 | Catalog JSON có đủ thông tin để máy tự đối chiếu với file trên đĩa | Feasibility | 4 | 4 | Không (catalog đã ghi đường dẫn từng asset) |
 | 5 | Nguyên nhân chủ yếu là đường dẫn sai / đặt tên sai, kiểm được bằng luật cố định | Feasibility | 4 | 3 | Có, nếu còn thời gian |
@@ -92,11 +92,13 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 *Điểm "quan trọng" và "đã có bằng chứng" là đề xuất ban đầu, nhóm điều chỉnh sau khi thảo luận.*
 
-Giả định nhóm kiểm chứng trong buổi này: #1 và #2 (quan trọng cao, bằng chứng thấp). Bộ câu hỏi ở mục 3.2.
+Giả định nhóm kiểm chứng trong buổi này: #1 và #2 (quan trọng cao, bằng chứng thấp lúc đầu); kết quả ở mục 3.2.
 
 ### 3.2. Kiểm chứng
 
 #### Cách kiểm chứng
+
+> Ghi chú: cần bổ sung ngày và hình thức hỏi (gặp mặt, chat hay biểu mẫu) cho từng buổi phỏng vấn dưới đây để đủ theo RULES mục 4.
 
 Phỏng vấn bán cấu trúc 3 người ngoài nhóm, theo vai trò, không ghi họ tên:
 
@@ -137,12 +139,25 @@ Phỏng vấn bán cấu trúc 3 người ngoài nhóm, theo vai trò, không gh
 | Mất bao lâu, bao lần | Khoảng 30–40 phút xử lý; xảy ra 2 lần trong tháng gần nhất |
 | Insight | Báo lỗi cần có theme id, trường dữ liệu và đường dẫn cụ thể; nếu không, thời gian truy vết tăng |
 
-#### Tổng hợp minh họa
+#### Tổng hợp
 
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
 | Log/review catalog hiện có | 3 lỗi | Có lỗi file thiếu, reference sai và 404 | Chưa có tần suất chuẩn hóa |
-| Phỏng vấn  | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng |
+| Phỏng vấn | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng. Thời gian 15–40' thấp hơn baseline 45–90' của Đạt; cần bấm giờ thật để đối chiếu |
+
+#### Bộ câu hỏi đề xuất cho các buổi phỏng vấn tiếp theo (theo The Mom Test)
+
+Hỏi về hành vi đã xảy ra, không hỏi ý kiến về giải pháp:
+
+1. Lần gần nhất app/build bị lỗi vì thiếu file hoặc sai đường dẫn là khi nào? Kể lại từ lúc phát hiện tới lúc sửa xong.
+2. Lúc đó bạn làm thế nào để biết file nào bị lỗi? Mất bao lâu?
+3. Trong tháng vừa rồi chuyện này xảy ra mấy lần?
+4. Bước nào mất thời gian nhất: tìm ra lỗi, sửa, hay build/đóng gói lại?
+5. Lỗi có từng lọt tới người dùng chưa? Chuyện gì xảy ra sau đó?
+6. Hiện bạn phòng trước bằng cách nào? Đã thử gì mà không hiệu quả?
+
+Không hỏi: "Bạn có muốn tool tự kiểm tra không?", "Ý tưởng này hay không?", "Bạn có dùng không?".
 
 #### Nhóm đã sửa problem thế nào sau kiểm chứng
 
@@ -164,7 +179,7 @@ Nhóm thu hẹp problem từ “kiểm tra toàn bộ asset” thành “phát h
 
 ### 4.1. Quy trình hiện tại
 
-Sơ đồ (nháp từ Problem Card #2 của Đạt; cập nhật số phút sau kiểm chứng CP4):
+Sơ đồ (nháp từ Problem Card #2 của Đạt; số phút là ước tính của Đạt, chưa bấm giờ thật; phỏng vấn ở 3.2 ghi 15–40' cho một lỗi, cần đối chiếu):
 
 ```mermaid
 flowchart TD
@@ -258,7 +273,7 @@ Vì sao:
 
 - **Độ mơ hồ thấp:** kết quả có đúng/sai rõ. Một đường dẫn trong catalog hoặc trỏ tới file có thật trên đĩa, hoặc không; không có nhiều đầu ra khác nhau cùng được chấp nhận như khi viết một đoạn văn. Các lỗi đã ghi nhận (id 48 trỏ file không tồn tại, id 87 thiếu popup, id 97 var4 trả 404) đều là lỗi xác định được.
 - **Độ phức tạp thấp:** phần cần xử lý là bước đối chiếu (bước 4–5), chỉ dùng hai nguồn dữ liệu là catalog JSON và file trên đĩa, và cùng một phép kiểm tra lặp lại cho từng đường dẫn, không rẽ nhánh. Quy trình tổng thể có 7 bước nối tiếp, nhưng các bước còn lại (nhận báo lỗi, sửa, build lại) là việc của người, không phải phần cần can thiệp.
-- Lưu ý còn phải kiểm chứng: nếu phỏng vấn ở CP4 cho thấy nguyên nhân thiếu file có nhiều dạng khác nhau mà luật đối chiếu không bắt hết (giả định 5), độ mơ hồ có thể cao hơn nhóm đang chấm.
+- Lưu ý còn phải kiểm chứng: nếu kiểm chứng (phỏng vấn thật hoặc pilot) cho thấy nguyên nhân thiếu file có nhiều dạng khác nhau mà luật đối chiếu không bắt hết (giả định 5), độ mơ hồ có thể cao hơn nhóm đang chấm.
 
 ### 6.2. So sánh 4 mức
 
@@ -335,7 +350,7 @@ Bài của nhóm dùng mức Rule, không có AI. Canvas dưới đây ghi phầ
 
 | Rủi ro | Câu hỏi | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng |
 |---|---|---|---|
-| **Value** | Người dùng có thật sự cần và sẽ dùng không? | Trung bình | Lỗi thiếu file có thật (id 48, 87, 97) và rà tay tốn thời gian, nhưng bằng chứng đến từ Đạt; chưa phỏng vấn dev khác, thời gian 30–60' chưa bấm giờ |
+| **Value** | Người dùng có thật sự cần và sẽ dùng không? | Trung bình | Lỗi thiếu file có thật (id 48, 87, 97) và rà tay tốn thời gian, 3 phỏng vấn ngoài nhóm ở 3.2 cũng gặp lỗi tương tự (15–40' mỗi lần) nhưng mẫu nhỏ; thời gian 45–90' của Đạt chưa bấm giờ thật |
 | **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | Thấp | Báo cáo chỉ gồm theme id, trường và đường dẫn thiếu; dev đã quen đọc catalog. Rủi ro còn lại là dev quá tin công cụ, đã có phương án quay về rà tay |
 | **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | Thấp | Cần catalog JSON và thư mục asset, cả hai có sẵn; luật đối chiếu đường dẫn là bài toán đơn giản. Cần kiểm giả định catalog ổn định (giả định 4) |
 | **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | Thấp | Script nội bộ, không dùng dịch vụ trả phí và không đưa dữ liệu ra ngoài. Cần chốt ai bảo trì script (đề xuất: dev làm data theme) |
@@ -348,7 +363,7 @@ Bài của nhóm dùng mức Rule, không có AI. Canvas dưới đây ghi phầ
 
 **Nếu Go — pilot nhỏ nhất:** Viết một script đọc catalog JSON, đối chiếu từng đường dẫn với file trên đĩa, in báo cáo theme id + trường + đường dẫn thiếu. Chạy thử trên catalog 160 theme hiện tại, xem có bắt đúng id 48, 87 và 97 không. Đồng thời bấm giờ 2–3 lần rà tay thật để có baseline đo được.
 
-**Nếu Not Yet — cần kiểm chứng gì trước:** Chỉ áp dụng nếu nhóm không xác nhận Go. Khi đó cần: (1) phỏng vấn ít nhất 2 dev khác về tần suất và cách xử lý lỗi thiếu file (giả định 1, 2); (2) bấm giờ thật baseline 45–90' (giả định 3); (3) kiểm nguyên nhân gốc của lỗi thiếu file (giả định 5).
+**Nếu Not Yet — cần kiểm chứng gì trước:** Chỉ áp dụng nếu nhóm không xác nhận Go. Khi đó cần: (1) phỏng vấn thêm ít nhất 2 dev khác (ngoài 3 buổi ở 3.2) về tần suất và cách xử lý lỗi thiếu file (giả định 1, 2); (2) bấm giờ thật baseline 45–90' (giả định 3); (3) kiểm nguyên nhân gốc của lỗi thiếu file (giả định 5).
 
 **Nếu No-Go — nên làm gì thay AI:** Dùng checklist cố định theo loại theme và quy ước đặt tên, rà tay trước khi build.
 
@@ -362,7 +377,7 @@ Bài của nhóm dùng mức Rule, không có AI. Canvas dưới đây ghi phầ
 
 ## 9. Hạn chế và hướng tiếp theo
 
-- Bằng chứng hiện chủ yếu từ trải nghiệm của một người (Đạt); cần thêm phỏng vấn/survey người ngoài nhóm để kiểm chứng giả định #1, #2.
+- Bằng chứng từ hồ sơ của Đạt và 3 phỏng vấn ngoài nhóm ở 3.2; mẫu nhỏ, cần mở rộng phỏng vấn/survey để kiểm chứng giả định #1, #2.
 - Chưa có số lần gặp lỗi mỗi tháng, nên chưa tính được tổng thời gian tiết kiệm thật sự.
 - Số liệu "Sau" ở 4.3 là kỳ vọng, chưa đo trên catalog thật.
 - Hướng tiếp theo: chạy thử bước kiểm tra trên catalog 160 theme hiện tại, đối chiếu xem có bắt được đúng các lỗi đã biết (id 48, 87, 97) không.
