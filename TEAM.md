@@ -61,20 +61,31 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Bằng chứng ghi nhận thật (log lỗi có id) làm vấn đề thuyết phục hơn nhiều so với ước lượng; nhưng vấn đề chỉ một người gặp thì vẫn yếu ở rủi ro Value.
 - Chọn mức đơn giản nhất đủ dùng: bài này Rule là đủ, kết luận không cần AI vẫn là kết luận tốt nếu lập luận chặt.
 
-### HoVaTen-MSSV
+### PhanDaoMinhQuan-2A202603971
 
 **Phần việc phụ trách:**
 
--
+- Nhóm trưởng, điều phối thời gian và ghi chép CP3.
+- Chuẩn bị 3 Problem Card về tổng hợp tiến độ, kiểm tra báo cáo theo rubric và tìm lại quyết định cũ.
+- Tham gia gom cluster, xây cây OST, chấm điểm candidate và đồng thuận chọn problem.
 
 **Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
 
--
+- Viết 8 candidate problem theo 4 lăng kính ở CP1; chọn và phát triển 3 Problem Card ở CP2.
+- Đóng góp 3 candidate vào phần pitch CP3 và cluster “Điều phối và truy hồi thông tin nhóm”.
+- Đề xuất cách tách problem khỏi solution: mô tả pain, actor, bottleneck trước khi chọn No AI/Rule/Workflow/Agent.
+- Tham gia chấm điểm shortlist và ghi nhận lý do candidate asset của Đạt được ưu tiên vì có bằng chứng cụ thể hơn.
+- Rà soát boundary và mức can thiệp của nhóm; ủng hộ giải pháp Rule, không để công cụ tự sửa hoặc tự tạo file.
 
 **Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
 
--
+- Báo cáo cá nhân `report/individual/2A202603971_PhanDaoMinhQuan.md`: CP1, CP2, CP3–CP7.
+- `group_report.md` mục 2.1 Pitch, 2.2 Cluster, 2.3 Opportunity Solution Tree, 2.4 Chấm điểm shortlist.
+- `group_report.md` mục 4–8: quy trình, Problem Statement, mức Rule và quyết định Go phạm vi nhỏ.
+- Tài khoản GitHub thực hiện đóng góp: `Shirou191`.
 
 **Điều mình học được từ phần nhóm:**
 
--
+- Problem có scope nhỏ nhưng có actor, bottleneck và bằng chứng cụ thể đáng tin hơn một ý tưởng AI rộng nhưng chưa có baseline.
+- Cần kiểm tra No AI và Rule trước khi chọn Workflow hoặc Agent; bài toán đối chiếu file có đúng/sai rõ nên Rule là mức phù hợp.
+- Các số liệu ước tính phải được tách khỏi bằng chứng đã kiểm chứng và cần được bấm giờ hoặc ghi log trước khi chốt metric.
