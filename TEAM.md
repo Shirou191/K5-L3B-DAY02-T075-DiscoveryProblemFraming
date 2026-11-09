@@ -82,7 +82,7 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Báo cáo cá nhân `report/individual/2A202603971_PhanDaoMinhQuan.md`: CP1, CP2, CP3–CP7.
 - `group_report.md` mục 2.1 Pitch, 2.2 Cluster, 2.3 Opportunity Solution Tree, 2.4 Chấm điểm shortlist.
 - `group_report.md` mục 4–8: quy trình, Problem Statement, mức Rule và quyết định Go phạm vi nhỏ.
-- Tài khoản GitHub thực hiện đóng góp: `Shirou191`.
+- Tài khoản GitHub thực hiện đóng góp: `Shirou191` commit `cc9917077cc26165ff94bcb52acb0b94bb1f2afe`, `be35ed5622ed19d29d1c41aa67b918e87a2beb34`, `a109e417263ee391cbbfbcb6c6f649997c3b265b` .
 
 **Điều mình học được từ phần nhóm:**
 
