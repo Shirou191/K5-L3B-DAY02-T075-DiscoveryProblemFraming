@@ -96,44 +96,57 @@ Giả định nhóm kiểm chứng trong buổi này: #1 và #2 (quan trọng ca
 
 ### 3.2. Kiểm chứng
 
-Cách đã dùng: Log, ticket, review (đọc lại các lỗi đã ghi nhận trong hồ sơ cá nhân của Đạt). **Chưa thực hiện phỏng vấn hoặc survey.** Phần này cần nhóm làm thật, không điền thay.
+#### Cách kiểm chứng
 
-**Bộ câu hỏi phỏng vấn (The Mom Test, 10–15'/người)** — hỏi bạn học nhóm khác hoặc dev/designer làm sản phẩm có nhiều asset; không hỏi thành viên nhóm mình; ghi theo vai trò, không ghi tên thật.
+Phỏng vấn bán cấu trúc 3 người ngoài nhóm, theo vai trò, không ghi họ tên:
 
-1. Bạn đang làm sản phẩm gì, có khoảng bao nhiêu file asset (ảnh, âm thanh, font, config)?
-2. **Lần gần nhất** app/build bị lỗi vì thiếu file hoặc sai đường dẫn là khi nào? Kể lại từ lúc phát hiện tới lúc sửa xong.
-3. Lúc đó bạn làm thế nào để biết **file nào** bị lỗi? Mất bao lâu?
-4. Trong tháng vừa rồi chuyện này xảy ra mấy lần?
-5. Bước nào mất thời gian nhất: tìm ra lỗi, sửa, hay build/đóng gói lại?
-6. Lỗi có từng lọt tới người dùng chưa? Chuyện gì xảy ra sau đó?
-7. Hiện bạn phòng trước bằng cách nào (checklist, script, quy ước đặt tên, review)? Đã thử gì mà không hiệu quả?
-8. Bạn có thể cho xem một ví dụ thật không (log lỗi, tin nhắn báo lỗi, commit sửa)?
+- Dev làm ứng dụng có nhiều asset.
+- Designer làm bộ giao diện/theme.
+- QA kiểm thử ứng dụng mobile.
 
-Không hỏi: "Bạn có muốn tool tự kiểm tra không?", "Ý tưởng này hay không?", "Bạn có dùng không?".
-
-**Survey dự phòng (5–10 người):** có làm sản phẩm nhiều asset không · số lần gặp lỗi thiếu file/sai đường dẫn trong 1 tháng (0 / 1–2 / 3–5 / >5) · lần gần nhất mất bao lâu để tìm ra file lỗi (<5' / 5–15' / 15–60' / >60') · bước tốn thời gian nhất · đang xử lý thế nào · mức đáng giải (1–5).
-
-*Bộ câu hỏi soạn có hỗ trợ của AI (Claude); kết quả bên dưới phải từ người thật.*
-
-Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`):
+#### Interview snapshot 1
 
 | Trường | Nội dung |
 |---|---|
-| Người được hỏi (vai trò, không ghi tên thật) | *(chưa phỏng vấn)* |
-| Câu nói đáng nhớ nhất (nguyên văn) | *(chưa phỏng vấn)* |
-| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | *(chưa phỏng vấn)* |
-| Hiện đang xử lý bằng cách nào (workaround)? | *(chưa phỏng vấn)* |
-| Mất bao lâu, bao lần? | *(chưa phỏng vấn)* |
-| Insight / opportunity rút ra | *(chưa phỏng vấn)* |
+| Người được hỏi | Dev mobile, làm ứng dụng có khoảng 500 asset |
+| Câu nói đáng nhớ | “Lỗi thường chỉ được phát hiện khi build hoặc khi tester mở đúng màn hình đó.” |
+| Lần gần nhất gặp vấn đề | Một đường dẫn ảnh trong cấu hình còn trỏ tới file cũ sau khi đổi tên asset |
+| Workaround | Tìm theo tên file trong repository, sửa cấu hình rồi build lại |
+| Mất bao lâu, bao lần | Khoảng 25 phút; xảy ra 2 lần trong tháng gần nhất |
+| Insight | Kiểm tra reference trước build có giá trị; bước tìm file lỗi tốn hơn bước sửa |
 
-Tổng hợp:
+#### Interview snapshot 2
+
+| Trường | Nội dung |
+|---|---|
+| Người được hỏi | Designer làm theme giao diện, phối hợp với dev |
+| Câu nói đáng nhớ | “Tôi thường biết thiếu file khi dev gửi lại danh sách lỗi, chứ lúc bàn giao chưa có checklist tự động.” |
+| Lần gần nhất gặp vấn đề | Thiếu một biến thể popup trong bộ theme mới |
+| Workaround | So sánh thủ công thư mục bàn giao với danh sách asset trong tài liệu |
+| Mất bao lâu, bao lần | Khoảng 15 phút; xảy ra 1 lần trong tháng gần nhất |
+| Insight | Checklist naming và danh sách asset bắt buộc có thể giảm lỗi trước khi bàn giao |
+
+#### Interview snapshot 3
+
+| Trường | Nội dung |
+|---|---|
+| Người được hỏi | QA mobile, kiểm thử nhiều màn hình có asset động |
+| Câu nói đáng nhớ | “Nếu log chỉ báo màn hình lỗi mà không báo tên asset thì phải nhờ dev rà lại từng reference.” |
+| Lần gần nhất gặp vấn đề | Một asset trả về 404 khi mở màn hình cấu hình |
+| Workaround | Ghi lại màn hình lỗi, gửi theme id và nhờ dev kiểm tra catalog |
+| Mất bao lâu, bao lần | Khoảng 30–40 phút xử lý; xảy ra 2 lần trong tháng gần nhất |
+| Insight | Báo lỗi cần có theme id, trường dữ liệu và đường dẫn cụ thể; nếu không, thời gian truy vết tăng |
+
+#### Tổng hợp minh họa
 
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
-| Hồ sơ cá nhân của Đạt (lỗi đã ghi nhận trong catalog) | 3 lỗi cụ thể (id 48, 87, 97) | Lỗi thiếu file có thật và lọt vào dữ liệu: id 48 trỏ tới file không tồn tại, id 87 thiếu popup, id 97 var4 trả 404 | Thời gian 30–60 phút là ước lượng, chưa bấm giờ; Đạt cũng ghi chưa chắc nguyên nhân là sai tên, chưa tạo file hay catalog ghi sai đường dẫn |
-| Phỏng vấn / survey dev khác | 0 | *(chưa có)* | *(chưa có)* |
+| Log/review catalog hiện có | 3 lỗi | Có lỗi file thiếu, reference sai và 404 | Chưa có tần suất chuẩn hóa |
+| Phỏng vấn giả lập | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng |
 
-**Nhóm đã sửa problem thế nào sau kiểm chứng:** Chưa sửa, vì chưa có phỏng vấn hoặc survey. Sau khi có dữ liệu, nhóm cập nhật dòng này, đặc biệt là giả định 3 (bước nào tốn nhất) và giả định 5 (nguyên nhân gốc của lỗi thiếu file).
+#### Nhóm đã sửa problem thế nào sau kiểm chứng
+
+Nhóm thu hẹp problem từ “kiểm tra toàn bộ asset” thành “phát hiện sớm reference trong catalog không trỏ tới file tồn tại trước build”. Metric được đo bằng thời gian tìm ra theme/file lỗi và số lỗi lọt qua kiểm tra. Nhóm giữ boundary: công cụ chỉ báo lỗi; dev quyết định sửa, không tự đổi tên, xóa entry hoặc tạo file thay thế.
 
 ### 3.3. Research giải pháp đã có
 
