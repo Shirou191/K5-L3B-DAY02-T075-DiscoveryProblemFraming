@@ -18,15 +18,15 @@
 
 | # | Người đưa ra | Candidate (Job Story ngắn) | Actor | Bottleneck | Câu hỏi phản biện nhận được (ai hỏi) |
 |---:|---|---|---|---|---|
-| 1 | Võ Trần Công | Khi nhận yêu cầu xây dựng chatbot AI, tôi muốn hiểu cấu trúc dữ liệu Odoo nhanh hơn để xác định nguồn dữ liệu và phương án tích hợp | AI Engineer, BA, khách hàng | Khảo sát model, field và quan hệ dữ liệu mất 2–4 giờ/dự án | Chưa ghi nhận trong hồ sơ cá nhân |
-| 2 | Võ Trần Công | Khi xây dựng pipeline RAG, tôi muốn xử lý bộ tài liệu PDF, DOCX, Excel nhanh hơn để giảm thời gian chuẩn bị dữ liệu | AI Engineer, Data Engineer | Đọc, phân loại, làm sạch và chia nhỏ tài liệu mất 3–5 giờ/bộ | Chưa ghi nhận trong hồ sơ cá nhân |
-| 3 | Võ Trần Công | Khi AI Agent chạy sai, tôi muốn truy vết từng bước reasoning, tool call và API để tìm đúng nguyên nhân | AI Engineer, Backend Engineer, QA | Tái hiện lỗi và đọc log mất khoảng 30–60 phút/lỗi | Chưa ghi nhận trong hồ sơ cá nhân |
+| 1 | Võ Trần Công | Khi nhận yêu cầu xây dựng chatbot AI, tôi muốn hiểu cấu trúc dữ liệu Odoo nhanh hơn để xác định nguồn dữ liệu và phương án tích hợp | AI Engineer, BA, khách hàng | Khảo sát model, field và quan hệ dữ liệu mất 2–4 giờ/dự án | (Đạt hỏi) "2–4 giờ hiểu cấu trúc Odoo là cho dự án đầu tiên hay dự án nào cũng vậy? Nếu chỉ lần đầu thì sau vài dự án có còn đau không?"; "Hiểu cấu trúc dữ liệu Odoo có phải là việc AI làm được không, hay thực ra chỉ cần tài liệu Odoo đầy đủ là xong?" |
+| 2 | Võ Trần Công | Khi xây dựng pipeline RAG, tôi muốn xử lý bộ tài liệu PDF, DOCX, Excel nhanh hơn để giảm thời gian chuẩn bị dữ liệu | AI Engineer, Data Engineer | Đọc, phân loại, làm sạch và chia nhỏ tài liệu mất 3–5 giờ/bộ | (Đạt hỏi) "3–5 giờ xử lý tài liệu RAG: bao nhiêu phần là việc lặp lại y hệt mỗi lần, bao nhiêu phần là việc cần hiểu nội dung?" |
+| 3 | Võ Trần Công | Khi AI Agent chạy sai, tôi muốn truy vết từng bước reasoning, tool call và API để tìm đúng nguyên nhân | AI Engineer, Backend Engineer, QA | Tái hiện lỗi và đọc log mất khoảng 30–60 phút/lỗi | (Đạt hỏi) "Truy vết agent chạy sai 30–60 phút/lỗi — đó là lỗi của agent, hay là log của mình chưa đủ tốt?" |
 | 4 | Hà Văn Khánh Đạt | Khi thêm theme bàn phím mới, tôi muốn biết đủ asset cần chuẩn bị để không bị thiếu file khi build | Dev, designer | Rà tay từng file khoảng 30 phút/theme; vẫn có thể sót | Chưa ghi nhận trong hồ sơ cá nhân |
-| 5 | Hà Văn Khánh Đạt | Khi theme bị báo thiếu file, tôi muốn biết ngay file và theme lỗi để không phải rà cả catalog 160 theme | Dev | Đối chiếu đường dẫn thủ công, có lỗi id 48, 87 và 97 đã ghi nhận | (1) Sao không dùng test Lint có sẵn? → Lint chỉ kiểm resource trong `res/`, không đọc catalog JSON nên không biết đường dẫn trong catalog có file thật không (xem 3.3). (2) Mỗi data/theme phải viết một script à? → Không, một script dùng chung cho cả catalog: đọc catalog JSON, quét hết 160 theme; thêm theme mới chỉ cần thêm entry, không viết thêm script |
+| 5 | Hà Văn Khánh Đạt | Khi theme bị báo thiếu file, tôi muốn biết ngay file và theme lỗi để không phải rà cả catalog 160 theme | Dev | Đối chiếu đường dẫn thủ công, có lỗi id 48, 87 và 97 đã ghi nhận | Nhóm khác hỏi: (1) Sao không dùng test Lint có sẵn? → Lint chỉ kiểm resource trong `res/`, không đọc catalog JSON nên không biết đường dẫn trong catalog có file thật không (xem 3.3). (2) Mỗi data/theme phải viết một script à? → Không, một script dùng chung cho cả catalog: đọc catalog JSON, quét hết 160 theme; thêm theme mới chỉ cần thêm entry, không viết thêm script |
 | 6 | Hà Văn Khánh Đạt | Khi đóng gói ZIP, tôi muốn mỗi theme có đủ folder và reference để không phải gom file rời | Dev | Gom và copy thủ công mất khoảng 1–2 giờ/đợt 160 theme | Chưa ghi nhận trong hồ sơ cá nhân |
-| 7 | Phan Đào Minh Quân | Khi gần deadline bài nhóm, tôi muốn biết ai đã làm gì và phần nào còn thiếu để hoàn thiện báo cáo đúng hạn | Thành viên điều phối, cả nhóm | Hỏi lại phần thiếu mất khoảng 15–30 phút/lần | Chưa ghi nhận trong hồ sơ cá nhân |
-| 8 | Phan Đào Minh Quân | Khi chuẩn bị nộp bài, tôi muốn đối chiếu báo cáo với rubric để tránh thiếu mục hoặc sai format | Người kiểm tra cuối | Tìm phần tương ứng trong báo cáo mất khoảng 20–30 phút | Chưa ghi nhận trong hồ sơ cá nhân |
-| 9 | Phan Đào Minh Quân | Khi cần nhớ quyết định cũ, tôi muốn tìm được quyết định và lý do để không tranh luận lại từ đầu | Cả nhóm | Mở và đọc nhiều thread mất khoảng 10–20 phút/lần | Chưa ghi nhận trong hồ sơ cá nhân |
+| 7 | Phan Đào Minh Quân | Khi gần deadline bài nhóm, tôi muốn biết ai đã làm gì và phần nào còn thiếu để hoàn thiện báo cáo đúng hạn | Thành viên điều phối, cả nhóm | Hỏi lại phần thiếu mất khoảng 15–30 phút/lần | (Đạt hỏi) "15–30 phút hỏi lại phần thiếu mỗi lần — có phải vì nhóm không cập nhật tiến độ thường xuyên, chứ không phải thiếu công cụ?" |
+| 8 | Phan Đào Minh Quân | Khi chuẩn bị nộp bài, tôi muốn đối chiếu báo cáo với rubric để tránh thiếu mục hoặc sai format | Người kiểm tra cuối | Tìm phần tương ứng trong báo cáo mất khoảng 20–30 phút | (Đạt hỏi) "20–30 phút đối chiếu rubric — có phải vì báo cáo viết lộn xộn nên tìm không ra, chứ không phải vì rubric khó?" |
+| 9 | Phan Đào Minh Quân | Khi cần nhớ quyết định cũ, tôi muốn tìm được quyết định và lý do để không tranh luận lại từ đầu | Cả nhóm | Mở và đọc nhiều thread mất khoảng 10–20 phút/lần | (Đạt hỏi) "Tìm quyết định cũ mất 10–20 phút/lần — vấn đề là tìm không ra, hay là nhóm không ghi quyết định lại một chỗ ngay từ đầu?" |
 
 ### 2.2. Cluster
 
@@ -230,8 +230,8 @@ flowchart TD
 
 Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
 
-- **Chưa có phản biện nào được ghi nhận** từ AI hoặc nhóm khác. Phần này cần nhóm nhờ AI hoặc nhóm khác phản biện Problem Statement v0 (chỉ hỏi lỗ hổng, không để viết lại) rồi điền: điểm yếu, nhóm có đồng ý không, đã sửa gì.
-- Câu hỏi gợi ý để hỏi: Baseline 45–90' dựa trên cách đo nào? Lỗi thiếu file có thể do nhiều nguyên nhân (sai tên, chưa tạo file, catalog sai)? Nếu công cụ báo sót thì dev có biết không?
+- **Nhóm khác hỏi:** "Sao không dùng test Lint có sẵn?" → **Đồng ý cần làm rõ, giữ nguyên giải pháp.** Android Lint chỉ kiểm resource trong `res/` mà code tham chiếu, không đọc catalog JSON, nên không biết đường dẫn ghi trong catalog có file thật trên đĩa không (xem 3.3). Lint vẫn dùng song song cho phần resource của app.
+- **Nhóm khác hỏi:** "Mỗi data/theme phải viết một script à?" → **Đồng ý cần làm rõ trong mô tả giải pháp.** Không phải: chỉ một script dùng chung cho cả catalog, đọc catalog JSON và quét toàn bộ 160 theme; thêm theme mới chỉ cần thêm entry vào catalog, không viết thêm script.
 
 ---
 
