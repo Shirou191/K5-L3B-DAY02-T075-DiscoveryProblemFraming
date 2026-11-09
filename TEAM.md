@@ -89,3 +89,29 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Problem có scope nhỏ nhưng có actor, bottleneck và bằng chứng cụ thể đáng tin hơn một ý tưởng AI rộng nhưng chưa có baseline.
 - Cần kiểm tra No AI và Rule trước khi chọn Workflow hoặc Agent; bài toán đối chiếu file có đúng/sai rõ nên Rule là mức phù hợp.
 - Các số liệu ước tính phải được tách khỏi bằng chứng đã kiểm chứng và cần được bấm giờ hoặc ghi log trước khi chốt metric.
+
+### VoTranCong-2A202604026
+
+**Phần việc phụ trách:**
+
+- Viết Problem Statement v0 (CP5) và v1 (CP6), mức can thiệp AI (mục 6) và quyết định (mục 8) trong báo cáo nhóm, theo phân công ở bảng "Phân công theo checkpoint".
+- Gộp báo cáo nhóm và giải quyết xung đột khi nhiều người cùng sửa `group_report.md`.
+- Chuẩn bị 3 Problem Card cá nhân (Odoo, chuẩn bị tài liệu cho RAG, truy vết lỗi quy trình tự động) cho phần pitch CP3.
+
+**Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
+
+- Soạn Problem Statement v0 và v1 (có bảng thay đổi giữa hai bản và 5 tiêu chí đánh giá), ma trận độ mơ hồ × độ phức tạp, so sánh 4 mức (chọn Rule), AI Canvas rút gọn, hai câu hỏi Google PAIR, bốn rủi ro, quyết định và ngưỡng dừng. Phần này soạn với hỗ trợ của AI (Claude) và được ghi trong bảng "Dùng AI" của báo cáo cá nhân; nhóm cần xác nhận lại nội dung.
+- Giải quyết 3 chỗ xung đột trong mục 3 (assumption map, bộ câu hỏi phỏng vấn, bảng research) bằng cách giữ bản của Đạt, rồi sửa các chỗ tham chiếu số thứ tự giả định cho khớp.
+- Pitch 3 Problem Card vào bảng pitch nhóm (Công #1, #2, #3).
+- Đối chiếu thứ tự card trong báo cáo cá nhân với bảng pitch nhóm.
+
+**Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
+
+- `group_report.md` mục 5 (Problem Statement v0), mục 6, mục 7 (Problem Statement v1 và tiêu chí đánh giá), mục 8 — commit `69b0013`.
+- Giải quyết xung đột và đồng bộ số thứ tự giả định — commit `6f6943f`.
+- Báo cáo cá nhân `report/individual/2A202604026_VoTranCong.md` — commit `ae71476`, `9994b5b`.
+
+**Điều mình học được từ phần nhóm:**
+
+- Cần phân biệt dữ kiện thực tế với giả định cá nhân khi viết Problem Statement, để không xây dựng trên nhận định chưa được kiểm chứng.
+- Nên viết rõ problem và nỗi đau của người dùng trước khi tìm công nghệ; với bài đối chiếu file có đúng/sai rõ, Rule rẻ hơn và chính xác hơn AI.
