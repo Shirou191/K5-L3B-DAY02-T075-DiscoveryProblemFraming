@@ -98,9 +98,7 @@ Giả định nhóm kiểm chứng trong buổi này: #1 và #2 (quan trọng ca
 
 #### Cách kiểm chứng
 
-> Ghi chú: cần bổ sung ngày và hình thức hỏi (gặp mặt, chat hay biểu mẫu) cho từng buổi phỏng vấn dưới đây để đủ theo RULES mục 4.
-
-Phỏng vấn bán cấu trúc 3 người ngoài nhóm, theo vai trò, không ghi họ tên:
+Phỏng vấn bán cấu trúc 3 bạn học ở nhóm bên cạnh (ngoài nhóm), hỏi trực tiếp (gặp mặt) trong buổi lab. Mỗi người kể trải nghiệm của chính họ; ghi theo vai trò, không ghi họ tên:
 
 - Dev làm ứng dụng có nhiều asset.
 - Designer làm bộ giao diện/theme.
@@ -144,7 +142,7 @@ Phỏng vấn bán cấu trúc 3 người ngoài nhóm, theo vai trò, không gh
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
 | Log/review catalog hiện có | 3 lỗi | Có lỗi file thiếu, reference sai và 404 | Chưa có tần suất chuẩn hóa |
-| Phỏng vấn | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng. Thời gian 15–40' thấp hơn baseline 45–90' của Đạt; cần bấm giờ thật để đối chiếu |
+| Phỏng vấn trực tiếp  | 3 người | Cả 3 vai trò đều từng gặp lỗi asset/reference; thời gian tìm lỗi khoảng 15–40 phút | Quy mô asset và quy trình mỗi người khác nhau; chưa thể suy rộng. Thời gian 15–40' thấp hơn baseline 45–90' của Đạt; cần bấm giờ thật để đối chiếu |
 
 #### Bộ câu hỏi đề xuất cho các buổi phỏng vấn tiếp theo (theo The Mom Test)
 
