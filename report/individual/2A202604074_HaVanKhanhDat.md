@@ -10,7 +10,7 @@
 - MSSV: 2A202604074
 - Email trường (không bắt buộc, repo có thể để public):
 - Tên nhóm: T075
-- Link repo nhóm: https://github.com/Shirou191/K5-L3B-Day02-T075-DiscoveryProblemFraming
+- Link repo nhóm: https://github.com/Shirou191/K5-L3B-DAY02-T075-DiscoveryProblemFraming
 
 ---
 
@@ -221,9 +221,9 @@ Sau: tôi sửa bottleneck thành bước 4–5, bỏ phần giải pháp khỏi
 
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
 
-Phỏng vấn/survey chính thức thì chưa làm — phần bấm giờ 1 tuần và hỏi designer/dev vẫn đang chờ. Nhưng có một kiểm chứng từ hồ sơ thật: rà lại log lỗi catalog thì thấy vấn đề không phải chuyện lẻ tẻ.
+Có. Theo kết quả kiểm chứng ở mục 3.2 báo cáo nhóm (phỏng vấn 3 người ngoài nhóm: dev mobile, designer theme, QA mobile), điều làm tôi bất ngờ nhất là vấn đề không chỉ của dev. Designer chỉ biết thiếu file khi dev gửi lại danh sách lỗi, còn QA thấy màn hình lỗi nhưng không biết asset nào nên phải nhờ dev rà lại reference. Thời gian tìm lỗi của họ khoảng 15–40 phút mỗi lần, 1–2 lần mỗi tháng — ít hơn con số 45–90 phút tôi ước lượng cho catalog của mình, nên tôi nhận ra con số của mình cần đo lại thật. Ngoài phỏng vấn, tôi rà lại log lỗi catalog của mình thì thấy vấn đề không phải chuyện lẻ tẻ.
 
-Điều bất ngờ: lỗi thiếu file không chỉ có một dạng. Ngoài file không tồn tại (id 48) còn có thiếu popup (id 87), file 404 (id 97 var4), sai tên file (id 123 typo nomal), tên file chứa {cate} chưa điền (id 134), cả sai màu toolbar 10 ký tự hex (id 91/92/94/95). Tức là lỗi rải khắp catalog, không phải một theme xui xẻo.
+Điều bất ngờ: lỗi trong catalog không chỉ có một dạng. Ngoài file không tồn tại (id 48) còn có thiếu popup (id 87), file 404 (id 97 var4), sai tên file (id 123 typo nomal), tên file chứa {cate} chưa điền (id 134), cả sai màu toolbar 10 ký tự hex (id 91/92/94/95). Tức là lỗi rải khắp catalog, không phải một theme xui xẻo.
 
 Điều đó làm problem mạnh lên: vì lỗi đã ghi nhận thật trong hồ sơ, không còn là cảm giác "hình như hay thiếu file" nữa.
 
