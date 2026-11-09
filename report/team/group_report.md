@@ -5,9 +5,9 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: T075
 - Thành viên: xem `TEAM.md`
-- Candidate problem được chọn (1 câu):
+- Candidate problem được chọn (1 câu): Khi một theme bàn phím bị báo lỗi thiếu file, dev muốn biết ngay file nào, theme nào để không phải rà tay cả catalog 160 theme (Đạt #2).
 - Quyết định cuối: Go / Not Yet / No-Go
 
 ---
@@ -67,7 +67,7 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 Điểm “Pain có bằng chứng” được chấm theo nội dung hiện có trong ba báo cáo cá nhân: các lỗi asset của Đạt có ví dụ cụ thể; Công có baseline thời gian nhưng còn ghi cần xác nhận; Quân ghi rõ các số liệu là ước tính chưa có log.
 
-**Candidate được chọn:** Tạm chọn **Đạt #2 — Khi một theme bị báo lỗi thiếu file, tôi muốn biết ngay file nào và theme nào để không phải rà cả catalog 160 theme**.
+**Candidate được chọn:** Chọn **Đạt #2 — Khi một theme bị báo lỗi thiếu file, tôi muốn biết ngay file nào và theme nào để không phải rà cả catalog 160 theme**.
 
 **Vì sao chọn:** Candidate có actor rõ, quy trình 3–7 bước, bottleneck cụ thể ở bước đối chiếu reference, impact đo được bằng thời gian và số lỗi, đồng thời có bằng chứng cụ thể về id 48, id 87 và id 97. Phương án No AI/Rule cũng rõ nên nhóm có thể kiểm tra giả thuyết đơn giản trước khi cân nhắc Workflow hoặc Agent.
 
@@ -83,20 +83,37 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 1 | Người khác làm sản phẩm có nhiều asset (theme, sticker, skin game…) cũng gặp lỗi thiếu file / sai đường dẫn, không chỉ một mình Đạt | Value | 5 | 1 | Có |
+| 2 | Lỗi thiếu file xảy ra đủ thường xuyên (vài lần/tháng) để đáng giải | Value | 5 | 2 | Có |
+| 3 | Mỗi lần gặp lỗi, phần lớn thời gian mất ở bước tìm file nào lỗi, không phải ở bước sửa | Value | 4 | 4 | Không (đã có từ quy trình của Đạt) |
+| 4 | Catalog JSON có đủ thông tin để máy tự đối chiếu với file trên đĩa | Feasibility | 4 | 4 | Không (catalog đã ghi đường dẫn từng asset) |
+| 5 | Nguyên nhân chủ yếu là đường dẫn sai / đặt tên sai, kiểm được bằng luật cố định | Feasibility | 4 | 3 | Có, nếu còn thời gian |
+| 6 | Người làm theme chịu chạy một bước kiểm tra trước khi build/đóng gói | Usability | 3 | 2 | Không (để sau) |
 
-*Điền 4–6 giả định; xóa dòng thừa.*
+*Điểm "quan trọng" và "đã có bằng chứng" là đề xuất ban đầu, nhóm điều chỉnh sau khi thảo luận.*
 
-Giả định nhóm kiểm chứng trong buổi này:
+Giả định nhóm kiểm chứng trong buổi này: #1 và #2 (quan trọng cao, bằng chứng thấp). Bộ câu hỏi ở mục 3.2.
 
 ### 3.2. Kiểm chứng
 
 Cách đã dùng: Phỏng vấn / Survey / Log, ticket, review
+
+**Bộ câu hỏi phỏng vấn (The Mom Test, 10–15'/người)** — hỏi bạn học nhóm khác hoặc dev/designer làm sản phẩm có nhiều asset; không hỏi thành viên nhóm mình; ghi theo vai trò, không ghi tên thật.
+
+1. Bạn đang làm sản phẩm gì, có khoảng bao nhiêu file asset (ảnh, âm thanh, font, config)?
+2. **Lần gần nhất** app/build bị lỗi vì thiếu file hoặc sai đường dẫn là khi nào? Kể lại từ lúc phát hiện tới lúc sửa xong.
+3. Lúc đó bạn làm thế nào để biết **file nào** bị lỗi? Mất bao lâu?
+4. Trong tháng vừa rồi chuyện này xảy ra mấy lần?
+5. Bước nào mất thời gian nhất: tìm ra lỗi, sửa, hay build/đóng gói lại?
+6. Lỗi có từng lọt tới người dùng chưa? Chuyện gì xảy ra sau đó?
+7. Hiện bạn phòng trước bằng cách nào (checklist, script, quy ước đặt tên, review)? Đã thử gì mà không hiệu quả?
+8. Bạn có thể cho xem một ví dụ thật không (log lỗi, tin nhắn báo lỗi, commit sửa)?
+
+Không hỏi: "Bạn có muốn tool tự kiểm tra không?", "Ý tưởng này hay không?", "Bạn có dùng không?".
+
+**Survey dự phòng (5–10 người):** có làm sản phẩm nhiều asset không · số lần gặp lỗi thiếu file/sai đường dẫn trong 1 tháng (0 / 1–2 / 3–5 / >5) · lần gần nhất mất bao lâu để tìm ra file lỗi (<5' / 5–15' / 15–60' / >60') · bước tốn thời gian nhất · đang xử lý thế nào · mức đáng giải (1–5).
+
+*Bộ câu hỏi soạn có hỗ trợ của AI (Claude); kết quả bên dưới phải từ người thật.*
 
 Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`):
 
@@ -121,9 +138,11 @@ Tổng hợp:
 
 | Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| Android Lint (công cụ kiểm tra tĩnh có sẵn trong Android Studio/Gradle) | [developer.android.com/studio/write/lint](https://developer.android.com/studio/write/lint), [check UnusedResources](https://googlesamples.github.io/android-custom-lint-rules/checks/UnusedResources.md.html) | Phát hiện sớm (trước bước 1): chạy lúc build | Có sẵn, chạy tự động trong Gradle, cấu hình được bằng `lint.xml` | Kiểm tra resource trong `res/` mà code tham chiếu; **không đọc catalog JSON** nên không biết đường dẫn asset ghi trong catalog có tồn tại không | Pattern "kiểm tra lúc build, báo lỗi trước khi giao" là đúng; cần một bước kiểm tra riêng cho catalog |
+| JSON Schema + validator (ví dụ Ajv) | [json-schema.org](https://json-schema.org/), [ajv.js.org](https://ajv.js.org/) | Bước 3–4: kiểm entry catalog đúng format (đủ trường, đúng kiểu, đúng mẫu tên file) | Chuẩn mở, báo lỗi chỉ đúng trường nào của entry nào | Chỉ kiểm **format**, không kiểm file có tồn tại thật trên đĩa; vẫn cần thêm bước đối chiếu file | Tách 2 loại lỗi: sai format (schema bắt được) và thiếu file (cần đối chiếu đĩa) |
+| Firebase Crashlytics — ghi lỗi non-fatal | [Customize crash reports for Android](https://firebase.google.com/docs/crashlytics/android/customize-crash-reports) | Bước 1–2: biết theme nào lỗi trên máy người dùng | Ghi được lỗi không làm crash app (`recordException`) kèm custom key, ví dụ theme id, tên file | Chỉ biết **sau khi** lỗi đã lọt ra người dùng; báo cáo gửi theo lô ở lần mở app sau | Dùng làm lưới an toàn cuối, không thay được kiểm tra trước khi giao |
+
+*Research có hỗ trợ của AI (Claude). Nhóm cần tự mở và kiểm từng link trước khi nộp.*
 
 ---
 
@@ -131,39 +150,69 @@ Tổng hợp:
 
 ### 4.1. Quy trình hiện tại
 
-Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
+Sơ đồ (nháp từ Problem Card #2 của Đạt; cập nhật số phút sau kiểm chứng CP4):
 
-```text
-
+```mermaid
+flowchart TD
+  A["1. Nhận báo lỗi<br/>build fail / theme hỏng / user báo<br/>~5'"] --> B["2. Xác định theme nào lỗi<br/>~5–10'"]
+  B --> C["3. Mở catalog JSON, tìm entry<br/>~5'"]
+  C --> D["4. Đối chiếu từng đường dẫn với file trên đĩa<br/>~15–30'"]
+  D -->|tìm thấy| F["6. Sửa đường dẫn / bổ sung file<br/>~10'"]
+  D -->|không thấy| E["5. Rà các theme cùng đợt hoặc cả catalog 160 theme<br/>~30–60'"]
+  E --> F
+  F --> G["7. Build / đóng gói lại để kiểm chứng<br/>~10–15'"]
+  style D fill:#fde2e2,stroke:#c0392b
+  style E fill:#fde2e2,stroke:#c0392b
 ```
 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
 |---:|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | Dev | Build fail, theme hỏng trên máy, hoặc user báo | Biết có lỗi | ~5' | Thông báo lỗi đôi khi chung chung |
+| 2 | Dev | Thông báo lỗi | Theme id bị lỗi | ~5–10' | Có lúc phải đoán |
+| 3 | Dev | Theme id, catalog JSON | Entry của theme | ~5' | |
+| 4 | Dev | Entry catalog, thư mục asset | Đường dẫn nào không có file | ~15–30' | Đối chiếu tay từng đường dẫn |
+| 5 | Dev | Cả catalog 160 theme, 2.192 file | Danh sách theme/file lỗi | ~30–60' | Chỉ khi bước 4 không tìm ra; ví dụ id 48 |
+| 6 | Dev | File/đường dẫn lỗi | Catalog hoặc asset đã sửa | ~10' | |
+| 7 | Dev | Catalog + asset đã sửa | Build/ZIP mới | ~10–15' | |
 
-**Bottleneck chính:**
+Tổng: ~1–2 tiếng mỗi lần gặp lỗi. Tần suất: cần bổ sung sau kiểm chứng.
+
+**Bottleneck chính:** Bước 4–5, đối chiếu tay từng đường dẫn trong catalog với file trên đĩa (~45–90'/lần). Catalog càng nhiều theme thì càng lâu và càng dễ sót (đã ghi nhận lỗi ở id 48, 87, 97).
 
 ### 4.2. Quy trình tương lai
 
 Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
 
-```text
-
+```mermaid
+flowchart TD
+  A["1. Dev chạy bước kiểm tra trước build / trước đóng gói<br/>(Con người bấm chạy) ~1'"] --> B["2. RULE: đọc catalog JSON, kiểm từng entry đủ trường, đúng mẫu tên<br/>~vài giây"]
+  B --> C["3. RULE: đối chiếu từng đường dẫn với file trên đĩa<br/>~vài giây cho 160 theme"]
+  C --> D{"Có lỗi?"}
+  D -->|Không| G["6. Build / đóng gói<br/>~10–15'"]
+  D -->|Có| E["4. Báo cáo: theme id + trường + đường dẫn thiếu<br/>(Rule tạo, Dev đọc)"]
+  E --> F["5. CON NGƯỜI: Dev quyết định sửa đường dẫn hay bổ sung file<br/>~10'"]
+  F --> B
+  C -.->|"script lỗi / báo nghi sai"| R["Phương án quay về: rà tay theo quy trình cũ (4.1) cho theme đó"]
+  R --> F
 ```
+
+- **Rule:** bước 2–4 (kiểm format entry, đối chiếu file tồn tại, xuất báo cáo). Không có bước AI: kiểm tra file tồn tại là bài toán xác định.
+- **Con người:** bước 1 (chạy kiểm tra), bước 5 (quyết định sửa thế nào), duyệt trước khi giao.
+- **Boundary:** công cụ chỉ **báo** lỗi, không tự đổi tên, tự xóa entry hay tự tạo file thay thế; mọi sửa đổi catalog và asset do dev quyết định.
+- **Phương án quay về:** nếu script lỗi hoặc báo nghi ngờ sai (ví dụ file có nhưng khác hoa/thường), dev rà tay theme đó theo quy trình hiện tại ở 4.1.
 
 ### 4.3. Before / after
 
 | Chỉ số | Trước | Sau (kỳ vọng) | Ghi chú |
 |---|---:|---:|---|
-| Số bước | | | |
-| Tổng thời gian | | | |
-| Số bước thủ công | | | |
-| Bottleneck chính | | | |
-| Rủi ro mới phát sinh | | | |
+| Số bước | 7 | 6 | Bỏ bước rà cả catalog (bước 5 cũ) |
+| Tổng thời gian | ~1–2 tiếng/lần | ~25–30'/lần | Phần lớn còn lại là sửa + build lại |
+| Thời gian tìm ra file lỗi | ~45–90' (bước 4–5) | <1' | Metric chính |
+| Số bước thủ công | 7 | 3 (chạy kiểm tra, quyết định sửa, build) | |
+| Bottleneck chính | Đối chiếu tay đường dẫn với file | Sửa + build lại (~20–25') | Bottleneck chuyển sang bước sửa |
+| Rủi ro mới phát sinh | — | Script có bug báo sót/báo nhầm; dev tin script mà bỏ kiểm tra tay | Giữ phương án quay về; kiểm script bằng các lỗi thật id 48, 87, 97 |
+
+*Số "Sau" là kỳ vọng, chưa đo. Nhóm cập nhật sau khi thử.*
 
 ---
 
@@ -282,8 +331,15 @@ Vì sao:
 
 ## 9. Hạn chế và hướng tiếp theo
 
--
+- Bằng chứng hiện chủ yếu từ trải nghiệm của một người (Đạt); cần thêm phỏng vấn/survey người ngoài nhóm để kiểm chứng giả định #1, #2.
+- Chưa có số lần gặp lỗi mỗi tháng, nên chưa tính được tổng thời gian tiết kiệm thật sự.
+- Số liệu "Sau" ở 4.3 là kỳ vọng, chưa đo trên catalog thật.
+- Hướng tiếp theo: chạy thử bước kiểm tra trên catalog 160 theme hiện tại, đối chiếu xem có bắt được đúng các lỗi đã biết (id 48, 87, 97) không.
 
 ## 10. Tài liệu tham khảo
 
--
+- Design Council — Double Diamond; Rob Fitzpatrick — *The Mom Test*; Teresa Torres — Opportunity Solution Tree, Interview Snapshot; David Bland — *Testing Business Ideas* (Assumption Map); Marty Cagan — 4 rủi ro; Google PAIR — People + AI Guidebook. Xem [docs/03-international-frameworks.md](../../docs/03-international-frameworks.md).
+- Android Lint: https://developer.android.com/tools/help/lint
+- Lint check UnusedResources: https://googlesamples.github.io/android-custom-lint-rules/checks/UnusedResources.md.html
+- JSON Schema: https://json-schema.org/ · Ajv: https://ajv.js.org/
+- Firebase Crashlytics — Customize crash reports for Android: https://firebase.google.com/docs/crashlytics/android/customize-crash-reports
